@@ -60,7 +60,7 @@ img,video{display:block;max-width:100%}
   -webkit-backdrop-filter:blur(24px) saturate(150%);
   border:1px solid var(--line);
   box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 20px 50px -20px rgba(0,0,0,.8)}
-.nav-logo{height:26px;width:26px;object-fit:contain;opacity:.9}
+.nav-logo{height:34px;width:auto;object-fit:contain;opacity:.95}
 .nav-links{display:flex;gap:24px}
 .nav-links a{font-size:13px;letter-spacing:.05em;color:var(--muted);transition:color .4s var(--e)}
 .nav-links a:hover{color:var(--cream)}
@@ -271,11 +271,9 @@ h2{font-family:var(--cinzel);font-weight:400;line-height:1.04;letter-spacing:.04
 .salon-split-img{position:relative}
 .salon-split-frame{border-radius:28px;padding:6px;background:rgba(201,168,106,.05);border:1px solid var(--line);overflow:hidden}
 .salon-split-frame img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:23px;display:block}
-.salon-logo-badge{position:absolute;bottom:24px;left:24px;
-  width:64px;height:64px;border-radius:50%;overflow:hidden;
-  border:2px solid var(--gold);background:var(--black);
-  box-shadow:0 8px 24px rgba(0,0,0,.6)}
-.salon-logo-badge img{width:100%;height:100%;object-fit:cover}
+.salon-logo-badge{position:absolute;bottom:20px;left:20px;
+  width:120px;height:auto;filter:drop-shadow(0 4px 16px rgba(0,0,0,.7))}
+.salon-logo-badge img{width:100%;height:auto;object-fit:contain}
 
 /* walk-in message */
 .salon-walkin{display:flex;gap:16px;align-items:flex-start;padding:20px;
@@ -342,7 +340,7 @@ h2{font-family:var(--cinzel);font-weight:400;line-height:1.04;letter-spacing:.04
 footer{border-top:1px solid var(--line);padding:60px 0 40px}
 .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:36px;flex-wrap:wrap}
 .foot-brand{display:flex;align-items:center;gap:12px}
-.foot-brand img{height:34px;width:34px;border-radius:4px;object-fit:cover}
+.foot-brand img{height:44px;width:auto;border-radius:0;object-fit:contain}
 .foot-brand-text{font-family:var(--cinzel);font-size:18px;letter-spacing:.14em;text-transform:uppercase}
 .foot-brand-text small{display:block;font-family:var(--sans);font-size:10px;
   letter-spacing:.36em;color:var(--gold);margin-top:3px;font-weight:400}
@@ -386,13 +384,13 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
 <div class="ambient"></div>
 
 <div id="loader">
-  <div class="loader-logo"><img src="assets/img/logo.jpg" alt="Les Artistes" width="120" height="120"></div>
+  <div class="loader-logo"><img src="assets/img/logo-transparent.png" alt="Les Artistes" width="120" height="120"></div>
   <div class="loader-bar"></div>
 </div>
 
 <nav class="nav" id="nav">
   <div class="nav-pill">
-    <img src="assets/img/logo.jpg" alt="Les Artistes" class="nav-logo" width="26" height="26">
+    <img src="assets/img/logo-transparent.png" alt="Les Artistes" class="nav-logo" width="26" height="26">
     <div class="nav-links">
       <a href="#tarifs">Tarifs</a>
       <a href="#galerie">Galerie</a>
@@ -631,7 +629,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
           <img src="assets/img/facade-nuit.jpg" alt="Les Artistes de nuit" loading="lazy"/>
           <!-- Logo badge -->
           <div class="salon-logo-badge">
-            <img src="assets/img/logo.jpg" alt="Logo Les Artistes"/>
+            <img src="assets/img/logo-transparent.png" alt="Logo Les Artistes"/>
           </div>
         </div>
       </div>
@@ -740,7 +738,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="assets/img/logo.jpg" alt="Les Artistes" style="height:34px;border-radius:4px" width="34" height="34">
+        <img src="assets/img/logo-transparent.png" alt="Les Artistes" style="height:34px;border-radius:4px" width="34" height="34">
         <div class="foot-brand-text">Les Artistes<small>Barber · Paris 11</small></div>
       </div>
       <div class="foot-nav">
