@@ -636,9 +636,9 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
       </div>
 
       <div class="mosaic-item reveal" data-d="2">
-        <div class="mosaic-in" style="aspect-ratio:3/4">
-          <img src="assets/img/gallery-4.jpg" alt="Le salon" loading="lazy" class="salon-slide" style="aspect-ratio:3/4"/>
-          <div class="mosaic-label">Le salon</div>
+        <div class="mosaic-in">
+          <img src="assets/img/neon.jpg" alt="Neon Les Artistes Barber" loading="lazy" class="salon-slide"/>
+          <div class="mosaic-label">Les Artistes</div>
         </div>
       </div>
 
@@ -704,58 +704,6 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
   </div>
 </section>
 
-<section class="salon" id="salon">
-  <div class="wrap">
-
-    <!-- Split : photo façade + texte -->
-    <div class="salon-split reveal">
-      <div class="salon-split-img">
-        <div class="salon-split-frame">
-          <img src="assets/img/facade-nuit.jpg" alt="Les Artistes de nuit" loading="lazy"/>
-          <!-- Logo badge -->
-          <div class="salon-logo-badge">
-            <img src="assets/img/logo-transparent.png" alt="Logo Les Artistes"/>
-          </div>
-        </div>
-      </div>
-      <div class="salon-split-copy reveal" data-d="1">
-        <span class="eyebrow">Le salon</span>
-        <h2 style="font-size:clamp(2rem,4.5vw,3.6rem);text-transform:uppercase;margin:18px 0 28px">Un cadre unique<br>dans le 11e</h2>
-        <div class="salon-walkin">
-          <div class="salon-walkin-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-6.3-7-11a7 7 0 1114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          </div>
-          <p>Pour ceux qui souhaitent se faire coiffer, vous pouvez venir directement au salon — il n'est pas obligatoire de prendre rendez-vous.</p>
-        </div>
-        <p style="color:var(--muted);font-size:15px;line-height:1.8;margin-top:20px">
-          Lumière chaude, fauteuils signés, déco soignée — un écrin pensé pour que vous vous sentiez bien dès l'entrée. Walk-in ou sur réservation, l'accueil est toujours le même.
-        </p>
-        <div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap">
-          <a href="https://www.planity.com/les-artistes-barber-75011-paris" target="_blank" rel="noopener" class="btn btn-gold">
-            Réserver sur Planity
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-          <a href="https://instagram.com/les.artiistes" target="_blank" rel="noopener" class="btn btn-ghost">
-            Instagram
-            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Carrousel photos clients -->
-    <div class="salon-carousel-wrap reveal" style="margin-top:56px">
-      <div class="salon-carousel" id="salonCarousel">
-        <div class="salon-slide"><img src="assets/img/neon.jpg" alt="Neon Les Artistes Barber" loading="lazy"/></div>
-        <div class="salon-slide"><img src="assets/img/client-braids.jpg" alt="Tresses chez Les Artistes" loading="lazy"/></div>
-        <div class="salon-slide"><img src="assets/img/client-face.jpg" alt="Coupe chez Les Artistes" loading="lazy"/></div>
-        <div class="salon-slide"><img src="assets/img/client-fade.jpg" alt="Dégradé chez Les Artistes" loading="lazy"/></div>
-      </div>
-      <div class="salon-dots" id="salonDots"></div>
-    </div>
-
-  </div>
-</section>
 
 <section class="infos" id="infos">
   <div class="wrap">
@@ -924,31 +872,6 @@ document.querySelectorAll('.celeb-card').forEach(card => {
   card.addEventListener('mouseleave', () =>
     gsap.to(inner, {rotateY:0, rotateX:0, scale:1, duration:.8, ease:'elastic.out(1,.5)'}));
 });
-
-/* ── CARROUSEL SALON ── */
-(()=>{
-  const carousel = document.getElementById('salonCarousel');
-  const dotsWrap = document.getElementById('salonDots');
-  if(!carousel) return;
-  const slides = carousel.querySelectorAll('.salon-slide');
-  const dots = [];
-  slides.forEach((_,i)=>{
-    const d = document.createElement('div');
-    d.className = 'salon-dot' + (i===0?' active':'');
-    d.addEventListener('click',()=>{ carousel.scrollTo({left:slides[i].offsetLeft,behavior:'smooth'}); });
-    dotsWrap.appendChild(d); dots.push(d);
-  });
-  const updateDots = ()=>{
-    const idx = Math.round(carousel.scrollLeft / carousel.offsetWidth * (slides.length / Math.round(carousel.offsetWidth / slides[0].offsetWidth)));
-    dots.forEach((d,i)=>d.classList.toggle('active', i===Math.min(idx, dots.length-1)));
-  };
-  carousel.addEventListener('scroll', updateDots, {passive:true});
-  // drag (desktop mouse only — mobile uses native touch scroll)
-  let down=false, sx=0, sl=0;
-  carousel.addEventListener('mousedown',e=>{down=true;sx=e.pageX;sl=carousel.scrollLeft;carousel.classList.add('dragging');});
-  window.addEventListener('mouseup',()=>{down=false;carousel.classList.remove('dragging');});
-  window.addEventListener('mousemove',e=>{if(!down)return;carousel.scrollLeft=sl-(e.pageX-sx);});
-})();
 
 
 /* ── LIGHTBOX ── */
