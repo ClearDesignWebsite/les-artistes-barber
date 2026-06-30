@@ -357,6 +357,14 @@ h2{font-family:var(--cinzel);font-weight:400;line-height:1.04;letter-spacing:.04
 .socials a.s-em svg{stroke:var(--gold);fill:none}
 .socials a.s-em:hover{border-color:var(--gold);box-shadow:0 8px 22px -6px rgba(201,168,106,.4)}
 
+/* ── AVIS ── */
+.avis{padding:120px 0 100px;background:var(--black2);overflow:hidden}
+.avis-head{text-align:center;margin-bottom:60px}
+.avis-head h2{font-size:clamp(2rem,4.5vw,3.4rem);text-transform:uppercase;margin-top:16px}
+.avis-widget-wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+/* Override styles du widget GR pour coller au thème */
+.avis-widget-wrap *{font-family:var(--sans)!important}
+
 /* ── CTA BAND ── */
 .cta-band{text-align:center;padding:140px 0;position:relative;overflow:hidden}
 .cta-band::before{content:"";position:absolute;inset:0;pointer-events:none;
@@ -751,6 +759,22 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.851441865322!2d2.3789437!3d48.8610197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66df21a71676f%3A0x67dbdbec12daaa36!2s17%20Rue%20Pache%2C%2075011%20Paris!5e0!3m2!1sfr!2sfr!4v1719650000000!5m2!1sfr!2sfr"
           title="Les Artistes — 17 Rue Pache Paris 11"></iframe>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="avis" id="avis">
+  <div class="wrap">
+    <div class="avis-head reveal">
+      <span class="eyebrow">Ce qu'ils disent</span>
+      <h2>Avis clients</h2>
+    </div>
+  </div>
+
+  <!-- GR Widget — colle ici le script tag récupéré sur grwidget.com -->
+  <div class="avis-widget-wrap">
+    <div id="grw-placeholder">
+      <!-- REMPLACE CE COMMENTAIRE PAR TON SCRIPT GR WIDGET -->
     </div>
   </div>
 </section>
