@@ -337,6 +337,16 @@ h2{font-family:var(--cinzel);font-weight:400;line-height:1.04;letter-spacing:.04
 .cta-band p{color:var(--muted);margin:22px auto 38px;max-width:440px;font-size:16px}
 
 /* ── FOOTER ── */
+/* ── LIGHTBOX ── */
+#lightbox{display:none;position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.92);
+  align-items:center;justify-content:center;cursor:zoom-out}
+#lightbox.open{display:flex}
+#lightbox img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:12px;
+  box-shadow:0 24px 80px rgba(0,0,0,.6)}
+#lightbox-close{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;
+  cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s}
+#lightbox-close:hover{opacity:1}
+
 footer{border-top:1px solid var(--line);padding:60px 0 40px}
 .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:36px;flex-wrap:wrap}
 .foot-brand{display:flex;align-items:center;gap:12px}
@@ -380,6 +390,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
 </head>
 <body>
 
+<div id="lightbox"><span id="lightbox-close">&times;</span><img id="lightbox-img" src="" alt=""/></div>
 <div class="grain"></div>
 <div class="ambient"></div>
 
@@ -390,7 +401,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
 
 <nav class="nav" id="nav">
   <div class="nav-pill">
-    <img src="assets/img/logo-transparent.png" alt="Les Artistes" class="nav-logo" width="26" height="26">
+    <a href="#hero" aria-label="Accueil"><img src="assets/img/logo-transparent.png" alt="Les Artistes" class="nav-logo" width="26" height="26"></a>
     <div class="nav-links">
       <a href="#tarifs">Tarifs</a>
       <a href="#galerie">Galerie</a>
@@ -608,13 +619,6 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
           <div class="stat"><div class="n" data-count="3">0</div><div class="l">Artistes — Meech, Delvin, Bambi</div></div>
         </div>
       </div>
-      <div class="coupe-video reveal" data-d="1">
-        <div class="coupe-video-in">
-          <video autoplay muted loop playsinline poster="assets/video/poster-coupe.jpg">
-            <source src="assets/video/coupe.mp4" type="video/mp4"/>
-          </video>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -694,8 +698,8 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
             </div>
           </div>
           <div class="info-row">
-            <span class="info-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none"/><path d="M4 7l8 6 8-6" fill="none"/></svg></span>
-            <div><h4>Email</h4><p>les.artiistes@gmail.com</p></div>
+            <span class="info-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <div><h4>Email</h4><a href="mailto:les.artiistes@gmail.com" style="color:var(--cream);text-decoration:none">les.artiistes@gmail.com</a></div>
           </div>
           <div>
             <h4 style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:10px">Réseaux</h4>
@@ -863,6 +867,25 @@ document.querySelectorAll('.celeb-card').forEach(card => {
   carousel.addEventListener('mousedown',e=>{down=true;sx=e.pageX;sl=carousel.scrollLeft;carousel.classList.add('dragging');});
   window.addEventListener('mouseup',()=>{down=false;carousel.classList.remove('dragging');});
   window.addEventListener('mousemove',e=>{if(!down)return;carousel.scrollLeft=sl-(e.pageX-sx);});
+})();
+
+/* ── LIGHTBOX ── */
+(()=>{
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const close = ()=>{ lb.classList.remove('open'); document.body.style.overflow=''; };
+  document.querySelectorAll('.salon-slide img').forEach(img=>{
+    img.style.cursor='zoom-in';
+    img.addEventListener('click',()=>{
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lb.classList.add('open');
+      document.body.style.overflow='hidden';
+    });
+  });
+  lb.addEventListener('click', close);
+  document.getElementById('lightbox-close').addEventListener('click', close);
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
 })();
 
 /* ── GSAP SCROLL ANIMATIONS ── */
