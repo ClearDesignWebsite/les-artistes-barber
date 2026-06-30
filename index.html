@@ -254,9 +254,6 @@ h2{font-family:var(--cinzel);font-weight:400;line-height:1.04;letter-spacing:.04
   box-shadow:0 24px 60px -20px rgba(0,0,0,.6)}
 .mosaic-in{border-radius:18px;overflow:hidden;background:#000;position:relative}
 .mosaic-in video,.mosaic-in img{width:100%;display:block;object-fit:cover}
-.mosaic-in video{aspect-ratio:9/16}
-.mosaic-in img{aspect-ratio:4/5}
-.mosaic-in img.wide{aspect-ratio:3/4}
 .mosaic-label{position:absolute;bottom:12px;left:12px;right:12px;
   font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--cream);
   font-weight:500;text-shadow:0 1px 6px rgba(0,0,0,.8)}
@@ -636,62 +633,65 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
   <div class="wrap">
     <div class="mosaic-grid">
 
-      <!-- col 1 -->
       <div class="mosaic-item reveal">
-        <div class="mosaic-in">
-          <video autoplay muted loop playsinline poster="assets/video/poster-t1.jpg"><source src="assets/video/t1.mp4" type="video/mp4"/></video>
-          <div class="mosaic-label">Locs</div>
-        </div>
-      </div>
-      <div class="mosaic-item reveal" data-d="1">
-        <div class="mosaic-in">
-          <img src="assets/img/gallery-3.jpg" alt="Coupe fade" loading="lazy" class="salon-slide"/>
-          <div class="mosaic-label">Fade &amp; barbe</div>
-        </div>
-      </div>
-      <div class="mosaic-item reveal" data-d="2">
-        <div class="mosaic-in">
-          <video autoplay muted loop playsinline poster="assets/video/poster-t3.jpg"><source src="assets/video/t3.mp4" type="video/mp4"/></video>
-          <div class="mosaic-label">Twist</div>
-        </div>
-      </div>
-
-      <!-- col 2 -->
-      <div class="mosaic-item reveal" data-d="1">
         <div class="mosaic-in">
           <img src="assets/img/gallery-1.jpg" alt="Cornrows client" loading="lazy" class="salon-slide"/>
           <div class="mosaic-label">Cornrows</div>
         </div>
       </div>
-      <div class="mosaic-item reveal" data-d="2">
-        <div class="mosaic-in">
-          <video autoplay muted loop playsinline poster="assets/video/poster-t2.jpg"><source src="assets/video/t2.mp4" type="video/mp4"/></video>
+
+      <div class="mosaic-item reveal" data-d="1">
+        <div class="mosaic-in" style="aspect-ratio:9/16">
+          <video autoplay muted loop playsinline poster="assets/video/poster-t2.jpg" style="aspect-ratio:9/16"><source src="assets/video/t2.mp4" type="video/mp4"/></video>
           <div class="mosaic-label">Cornrows</div>
         </div>
       </div>
-      <div class="mosaic-item reveal" data-d="3">
+
+      <div class="mosaic-item reveal" data-d="2">
         <div class="mosaic-in">
-          <img src="assets/img/gallery-4.jpg" alt="Les artistes devant le salon" loading="lazy" class="salon-slide"/>
+          <img src="assets/img/gallery-3.jpg" alt="Fade & barbe" loading="lazy" class="salon-slide"/>
+          <div class="mosaic-label">Fade &amp; barbe</div>
+        </div>
+      </div>
+
+      <div class="mosaic-item reveal" data-d="1">
+        <div class="mosaic-in" style="aspect-ratio:9/16">
+          <video autoplay muted loop playsinline poster="assets/video/poster-t4.jpg" style="aspect-ratio:9/16"><source src="assets/video/t4.mp4" type="video/mp4"/></video>
+          <div class="mosaic-label">Tresses plate</div>
+        </div>
+      </div>
+
+      <div class="mosaic-item reveal" data-d="2">
+        <div class="mosaic-in" style="aspect-ratio:3/4">
+          <img src="assets/img/gallery-4.jpg" alt="Le salon" loading="lazy" class="salon-slide" style="aspect-ratio:3/4"/>
           <div class="mosaic-label">Le salon</div>
         </div>
       </div>
 
-      <!-- col 3 -->
-      <div class="mosaic-item reveal" data-d="2">
-        <div class="mosaic-in">
-          <video autoplay muted loop playsinline poster="assets/video/poster-t4.jpg"><source src="assets/video/t4.mp4" type="video/mp4"/></video>
-          <div class="mosaic-label">Tresses plate</div>
+      <div class="mosaic-item reveal" data-d="3">
+        <div class="mosaic-in" style="aspect-ratio:9/16">
+          <video autoplay muted loop playsinline poster="assets/video/poster-t1.jpg" style="aspect-ratio:9/16"><source src="assets/video/t1.mp4" type="video/mp4"/></video>
+          <div class="mosaic-label">Locs</div>
         </div>
       </div>
-      <div class="mosaic-item reveal" data-d="3">
+
+      <div class="mosaic-item reveal" data-d="2">
         <div class="mosaic-in">
-          <img src="assets/img/gallery-2.jpg" alt="Coupe fade client" loading="lazy" class="salon-slide"/>
+          <img src="assets/img/gallery-2.jpg" alt="Fade net" loading="lazy" class="salon-slide"/>
           <div class="mosaic-label">Fade net</div>
         </div>
       </div>
+
+      <div class="mosaic-item reveal" data-d="3">
+        <div class="mosaic-in" style="aspect-ratio:9/16">
+          <video autoplay muted loop playsinline poster="assets/video/poster-t3.jpg" style="aspect-ratio:9/16"><source src="assets/video/t3.mp4" type="video/mp4"/></video>
+          <div class="mosaic-label">Twist</div>
+        </div>
+      </div>
+
       <div class="mosaic-item reveal" data-d="4">
-        <div class="mosaic-in">
-          <video autoplay muted loop playsinline poster="assets/video/poster-t5.jpg"><source src="assets/video/t5.mp4" type="video/mp4"/></video>
+        <div class="mosaic-in" style="aspect-ratio:9/16">
+          <video autoplay muted loop playsinline poster="assets/video/poster-t5.jpg" style="aspect-ratio:9/16"><source src="assets/video/t5.mp4" type="video/mp4"/></video>
           <div class="mosaic-label">Cornrows denses</div>
         </div>
       </div>
