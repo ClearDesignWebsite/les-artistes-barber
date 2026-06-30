@@ -404,20 +404,84 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
   .celebs-grid{grid-template-columns:1fr 1fr}
   .tarifs-grid{grid-template-columns:1fr}
   .tarifs-grid .span2{grid-column:span 1}
-  .coupe-inner{grid-template-columns:1fr;gap:36px}
+  .coupe-inner{grid-template-columns:1fr;gap:28px}
   .salon-grid{grid-template-columns:1fr}
   .salon-main{grid-row:auto}
   .infos-grid{grid-template-columns:1fr}
-  .foot-grid{flex-direction:column}
+  .foot-grid{flex-direction:column;gap:24px}
 }
+
+@media(max-width:768px){
+  /* sections padding */
+  .celebs,.tarifs,.tresses,.coupe,.avis,.infos{padding:72px 0}
+  .cta-band{padding:80px 0}
+  footer{padding:44px 0 28px}
+  /* galerie */
+  .tresses-grid{grid-template-columns:repeat(2,1fr)}
+  .mosaic-grid{columns:2}
+  .tresses-head{margin-bottom:36px}
+  .avis-head{margin-bottom:36px}
+  /* celeb */
+  .celebs-head{margin-bottom:44px}
+  /* coupe */
+  .coupe-video-in{max-height:60vw;aspect-ratio:auto}
+  /* infos */
+  .map-wrap,.map-wrap iframe{min-height:220px}
+}
+
 @media(max-width:620px){
-  .wrap{padding:0 18px}
+  .wrap{padding:0 16px}
+  /* nav */
+  .nav{padding:14px 16px}
+  .nav-pill{padding:8px 8px 8px 16px;gap:18px}
+  .nav-logo{height:28px}
+  /* hero */
+  .hero{padding-bottom:7vh}
+  .hero-eyebrow{font-size:9px;letter-spacing:.38em;margin-bottom:14px}
+  .hero-title{font-size:clamp(2.4rem,13vw,4rem)}
+  .hero-sub{font-size:1rem;margin-top:8px}
+  .hero-meta{flex-direction:column;align-items:flex-start;gap:12px;margin-top:22px}
+  .btn{width:100%;justify-content:space-between}
+  /* sections */
+  .celebs,.tarifs,.tresses,.coupe,.avis,.infos{padding:56px 0}
+  .cta-band{padding:64px 0}
+  /* typography */
+  .celebs-head h2,.tresses-head h2,.coupe-copy h2,.cta-band h2{font-size:clamp(1.7rem,9vw,2.8rem)}
+  .avis-head h2{font-size:clamp(1.6rem,8vw,2.4rem)}
+  .celebs-head{flex-direction:column;align-items:flex-start;margin-bottom:28px;gap:10px}
+  .celebs-head p{max-width:100%;font-size:14px}
+  /* grid célébrites */
   .celebs-grid{grid-template-columns:1fr}
   .celebs-duo{grid-template-columns:1fr!important}
-  .hero-meta{flex-direction:column;align-items:flex-start}
-  .btn{width:100%;justify-content:space-between}
-  .stats{gap:24px}
+  /* tarifs cards */
+  .card-in{padding:22px 18px}
+  .card-head h3{font-size:1.2rem}
+  .pr .px{font-size:15px}
+  .pr .nm{font-size:14px}
+  /* galerie */
+  .mosaic-grid{columns:1}
+  /* coupe */
+  .coupe-video-in{max-height:72vw}
+  .stats{gap:16px;margin-top:28px}
+  .stat .n{font-size:2rem}
+  /* infos */
+  .map-wrap,.map-wrap iframe{min-height:180px}
+  .info-row p{font-size:14px}
+  /* footer */
+  footer{padding:36px 0 24px}
+  .foot-brand-text{font-size:15px}
+  .foot-nav{gap:14px}
+  .foot-bottom{flex-direction:column;gap:6px}
 }
+
+@media(max-width:400px){
+  .hero-title{font-size:clamp(2rem,12vw,3rem)}
+  .card-in{padding:18px 14px}
+  .mosaic-grid{columns:1}
+  .celebs,.tarifs,.tresses,.coupe,.avis,.infos{padding:44px 0}
+  .cta-band{padding:52px 0}
+}
+
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none;filter:none}
@@ -441,7 +505,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
     <div class="nav-links">
       <a href="#tarifs">Tarifs</a>
       <a href="#galerie">Galerie</a>
-      <a href="#salon">Le Salon</a>
+      <a href="#avis">Avis</a>
       <a href="#infos">Accès</a>
     </div>
     <a href="https://www.planity.com/les-artistes-barber-75011-paris" target="_blank" rel="noopener" class="btn-nav">
@@ -455,7 +519,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
 <div class="menu" id="menu">
   <a href="#tarifs">Tarifs</a>
   <a href="#galerie">Galerie</a>
-  <a href="#salon">Le Salon</a>
+  <a href="#avis">Avis</a>
   <a href="#infos">Accès</a>
   <a href="https://www.planity.com/les-artistes-barber-75011-paris" target="_blank" rel="noopener" class="m-cta">Réserver sur Planity</a>
 </div>
@@ -800,7 +864,7 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px}
       </div>
       <div class="foot-nav">
         <a href="#tarifs">Tarifs</a><a href="#galerie">Galerie</a>
-        <a href="#salon">Le Salon</a><a href="#infos">Accès</a>
+        <a href="#galerie">Galerie</a><a href="#infos">Accès</a>
         <a href="https://instagram.com/les.artiistes" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.planity.com/les-artistes-barber-75011-paris" target="_blank" rel="noopener" style="color:var(--gold)">Réserver</a>
       </div>
